@@ -1,11 +1,11 @@
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  */
 
-# Dryden Framework for ZPanelX
+# Dryden Framework for FusionpanelX
 
-*Dryden* is the name of the custom framework for ZPanelX, the framework was built with simplicity in mind for novice developers to enable the rapid development of third-party modules.
+*Dryden* is the name of the custom framework for FusionpanelX, the framework was built with simplicity in mind for novice developers to enable the rapid development of third-party modules.
 
 Directory structure:
 --------------------
@@ -22,4 +22,4 @@ Directory structure:
 
 Developers resources:
 ---------------------
-A simple developers guide (for those who want to build modules for Sentora) can be found on our website http://docs.sentora.org/?node=9
+A simple developers guide (for those who want to build modules for Fusionpanel) can be found on our website http://docs.fusionpanel.org/?node=9

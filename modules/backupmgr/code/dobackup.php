@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * ZPanel - A Cross-Platform Open-Source Web Hosting Control panel.
+ * Fusionpanel - A Cross-Platform Open-Source Web Hosting Control panel.
  * 
- * @package ZPanel
+ * @package Fusionpanel
  * @version $Id$
  * @author Bobby Allen - ballen@bobbyallen.me
- * @copyright (c) 2008-2014 ZPanel Group - http://www.zpanelcp.com/
+ * @copyright (c) 2008-2014 Fusionpanel Group - http://www.zpanelcp.com/
  * @license http://opensource.org/licenses/gpl-3.0.html GNU Public License v3
  *
- * This program (ZPanel) is free software: you can redistribute it and/or modify
+ * This program (Fusionpanel) is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -89,11 +89,11 @@ function ExecuteBackup($userid, $username, $download = 0) {
     if (!is_dir($basedir)) {
         fs_director::CreateDirectory($basedir);
     }
-    $basedir = ctrl_options::GetSystemOption('sentora_root') . "etc/tmp/";
+    $basedir = ctrl_options::GetSystemOption('fusionpanel_root') . "etc/tmp/";
     if (!is_dir($basedir)) {
         fs_director::CreateDirectory($basedir);
     }
-    $temp_dir = ctrl_options::GetSystemOption('sentora_root') . "etc/tmp/";
+    $temp_dir = ctrl_options::GetSystemOption('fusionpanel_root') . "etc/tmp/";
     // Lets grab and archive the user's web data....
     $homedir = ctrl_options::GetSystemOption('hosted_dir') . $username;
     $backupname = $username . "_" . date("M-d-Y_hms", time());
@@ -101,7 +101,7 @@ function ExecuteBackup($userid, $username, $download = 0) {
     // We now see what the OS is before we work out what compression command to use..
     if (sys_versions::ShowOSPlatformVersion() == "Windows") {
         $resault = exec(fs_director::SlashesToWin(ctrl_options::GetSystemOption('zip_exe') . " a -tzip -y-r " . $temp_dir . $backupname . ".zip " . $homedir . "/public_html"));
-    } else {//cd /var/sentora/hostdata/zadmin/; zip -r backups/backup.zip public_html/
+    } else {//cd /var/fusionpanel/hostdata/zadmin/; zip -r backups/backup.zip public_html/
         $resault = exec("cd " . $homedir . "/ && " . ctrl_options::GetSystemOption('zip_exe') . " -r9 " . $temp_dir . $backupname . " public_html/*");
         @chmod($temp_dir . $backupname . ".zip", 0777);
     }

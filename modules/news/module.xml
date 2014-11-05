@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
-    <name>Sentora News</name>
+    <name>Fusionpanel News</name>
     <version>100</version>
     <defaultcat>Server Admin</defaultcat>
-    <desc>Find out all the latest news and infomation from the Sentora project.</desc>
-    <authorname>Sentora Project</authorname>
-    <authoremail>info@sentora.org</authoremail>
-    <authorurl>http://sentora.org/</authorurl>
-    <updateurl>http://store.sentora.org/version.xml</updateurl>
+    <desc>Find out all the latest news and infomation from the Fusionpanel project.</desc>
+    <authorname>Fusionpanel Project</authorname>
+    <authoremail>info@fusionpanel.org</authoremail>
+    <authorurl>http://fusionpanel.org/</authorurl>
+    <updateurl>http://store.fusionpanel.org/version.xml</updateurl>
 </module>

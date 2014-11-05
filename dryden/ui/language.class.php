@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * Language translation class.
  * @package zpanelx
  * @subpackage dryden -> ui
  * @version 1.0.1
  * @author Russell Skinner (rskinner@zpanelcp.com)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -19,7 +19,7 @@ class ui_language {
 
     /**
      * Used to translate a text string into the language preference of the user.
-     * @author Pascal Peyremorte (ppeyremorte@sentora.org)
+     * @author Pascal Peyremorte (ppeyremorte@fusionpanel.org)
      * @global db_driver $zdbh The ZPX database handle.
      * @param $message The string to translate.
      * @return string The transalated string.

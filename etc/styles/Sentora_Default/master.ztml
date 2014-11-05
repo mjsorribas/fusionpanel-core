@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sentora &gt; <# ui_tpl_username #> - <# ui_tpl_domainname #></title>
+        <title>Fusionpanel &gt; <# ui_tpl_username #> - <# ui_tpl_domainname #></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Stylesheets -->
@@ -14,7 +14,7 @@
         <script src="<# ui_tpl_assetfolderpath #>js/jquery.cookie.js"></script>
         <script src="<# ui_tpl_assetfolderpath #>js/jquery.sortable-custom.js"></script>
         <script src="<# ui_tpl_assetfolderpath #>js/spin.min.js"></script>
-        <script src="<# ui_tpl_assetfolderpath #>js/sentora.js"></script>
+        <script src="<# ui_tpl_assetfolderpath #>js/fusionpanel.js"></script>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="<# ui_tpl_assetfolderpath #>img/ico/apple-touch-icon-57-precomposed.png">
@@ -52,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="navbar-brand" href="."><img src="<# ui_tpl_assetfolderpath #>img/logos/sentora_logo_header.png" width="96" height="36" alt="Home"></a>
+                <a class="navbar-brand" href="."><img src="<# ui_tpl_assetfolderpath #>img/logos/fusionpanel_logo_header.png" width="96" height="36" alt="Home"></a>
                 <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#" class="nav-stat-button" title="View Account Info" data-toggle="collapse" data-target="#stats-data"><i class="icon-chart-bar-2"></i></a></li>
@@ -224,8 +224,8 @@
                                     </div>
 
                                     <div class="stats-row">
-                                        <div class="stats-column"><strong><: Sentora Version :>:</strong></div>
-                                        <div class="stats-column"><# ui_tpl_sentoraversion #></div>
+                                        <div class="stats-column"><strong><: Fusionpanel Version :>:</strong></div>
+                                        <div class="stats-column"><# ui_tpl_fusionpanelversion #></div>
                                     </div>
 
                                     <div class="stats-row">
@@ -257,7 +257,7 @@
 
                 </div><!--/page-content-->
             </div>
-            <div id="footer" >Copyright &copy; 2004-<# ui_tpl_year #> <a href="http://www.sentora.org/" target="_blank">Sentora Project</a>.</div>
+            <div id="footer" >Copyright &copy; 2004-<# ui_tpl_year #> <a href="http://www.fusionpanel.org/" target="_blank">Fusionpanel Project</a>.</div>
         </div><!-- END CONTAINER -->
 
         <!-- Javascript
@@ -278,7 +278,7 @@
         <!-- Modulelist for Typeahead -->
         <script>
                 var moduleJsonData = <# ui_tpl_modulelistjson #>;
-                Sentora.modules.typeAhead(moduleJsonData);
+                Fusionpanel.modules.typeAhead(moduleJsonData);
         </script>
 
         <# ui_controllerdebug #>

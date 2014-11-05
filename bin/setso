@@ -1,14 +1,14 @@
 #!/usr/bin/php
 <?php
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * SETSO - The ZPanel CLI System Option Tool.
+ * SETSO - The Fusionpanel CLI System Option Tool.
  * @package zpanelx
  * @subpackage core -> setso
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -42,10 +42,10 @@ if ((isset($argv[1])) && ($argv[1] == '--show')) {
 }
 
 if ((!isset($argv[1])) || ($argv[1] == 'help') || ($argv[1] == '-h') || ($argv[1] == '--help')) {
-    fwrite(STDOUT, "\nSentora Sytem Option Tool\n");
-    fwrite(STDOUT, "Copyright (c) 2014 Sentora Project\n");
-    fwrite(STDOUT, "http://sentora.org/\n");
-    fwrite(STDOUT, "Copyright (c) 2008 - 2014 ZPanel Project\n");
+    fwrite(STDOUT, "\nFusionpanel Sytem Option Tool\n");
+    fwrite(STDOUT, "Copyright (c) 2014 Fusionpanel Project\n");
+    fwrite(STDOUT, "http://fusionpanel.org/\n");
+    fwrite(STDOUT, "Copyright (c) 2008 - 2014 Fusionpanel Project\n");
     fwrite(STDOUT, "http://www.zpanelcp.com/\n");
     fwrite(STDOUT, "Usage: setso [options] [name] [value]\n");
     fwrite(STDOUT, "Options:\n");

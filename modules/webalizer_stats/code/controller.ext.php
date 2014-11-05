@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * ZPanel - Visitor Stats zpanel plugin, written by RusTus: www.zpanelcp.com.
+ * Fusionpanel - Visitor Stats zpanel plugin, written by RusTus: www.zpanelcp.com.
  *
  */
 class module_controller extends ctrl_module

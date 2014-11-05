@@ -2,15 +2,15 @@
 
 /**
  *
- * Sentora - A Cross-Platform Open-Source Web Hosting Control panel.
+ * Fusionpanel - A Cross-Platform Open-Source Web Hosting Control panel.
  *
- * @package ZPanel
+ * @package Fusionpanel
  * @version $Id$
  * @author Bobby Allen - ballen@bobbyallen.me
- * @copyright (c) 2008-2014 ZPanel Group - http://www.zpanelcp.com/
+ * @copyright (c) 2008-2014 Fusionpanel Group - http://www.zpanelcp.com/
  * @license http://opensource.org/licenses/gpl-3.0.html GNU Public License v3
  *
- * This program (Sentora) is free software: you can redistribute it and/or modify
+ * This program (Fusionpanel) is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -65,7 +65,7 @@ class module_controller extends ctrl_module
     {
         $time = ctrl_options::GetSystemOption('daemon_lastrun');
         if ($time != '0') {
-            return date(ctrl_options::GetSystemOption('sentora_df'), $time);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), $time);
         } else {
             return false;
         }
@@ -75,10 +75,10 @@ class module_controller extends ctrl_module
     {
         if (ctrl_options::GetSystemOption('daemon_lastrun') > 0) {
             $new_time = ctrl_options::GetSystemOption('daemon_lastrun') + ctrl_options::GetSystemOption('daemon_run_interval');
-            return date(ctrl_options::GetSystemOption('sentora_df'), $new_time);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), $new_time);
         } else {
             // The default cron is set to run every 5 minutes on the 5 minute mark!
-            return date(ctrl_options::GetSystemOption('sentora_df'), ceil(time() / 300) * 300);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), ceil(time() / 300) * 300);
         }
     }
 
@@ -86,7 +86,7 @@ class module_controller extends ctrl_module
     {
         $time = ctrl_options::GetSystemOption('daemon_dayrun');
         if ($time != '0') {
-            return date(ctrl_options::GetSystemOption('sentora_df'), $time);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), $time);
         } else {
             return false;
         }
@@ -96,7 +96,7 @@ class module_controller extends ctrl_module
     {
         $time = ctrl_options::GetSystemOption('daemon_weekrun');
         if ($time != '0') {
-            return date(ctrl_options::GetSystemOption('sentora_df'), $time);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), $time);
         } else {
             return false;
         }
@@ -106,7 +106,7 @@ class module_controller extends ctrl_module
     {
         $time = ctrl_options::GetSystemOption('daemon_monthrun');
         if ($time != '0') {
-            return date(ctrl_options::GetSystemOption('sentora_df'), $time);
+            return date(ctrl_options::GetSystemOption('fusionpanel_df'), $time);
         } else {
             return false;
         }
@@ -135,7 +135,7 @@ class module_controller extends ctrl_module
                     $updatesql->execute();
                 }
             }
-            self::SetWriteApacheConfigTrue(); #sentora apache port changed require rewrite of vhosts
+            self::SetWriteApacheConfigTrue(); #fusionpanel apache port changed require rewrite of vhosts
         }
         self::$ok = true;
     }

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * A class to manage common file manipulation operations.
  * @package zpanelx
  * @subpackage dryden -> filesystem
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -59,7 +59,7 @@ class fs_filehandler {
 	
 	/**
 	 * Copies a Directory's contents including all of its subfolders and files
-	 * @author VJ Patel (meetthevj@gmail.com - VJftw @ ZPanel Forums)
+	 * @author VJ Patel (meetthevj@gmail.com - VJftw @ Fusionpanel Forums)
 	 * @param string $src The full path to the source directory (the directory who's contents to copy)
 	 * @param string $dest The full path to the destination directory (the directory to put the subfolders and files in)
 	 */
@@ -86,7 +86,7 @@ class fs_filehandler {
 	 
 	/**
 	 * Removes a Directory's contents (without removing the directory itself)
-	 * @author VJ Patel (meetthevj@gmail.com - VJftw @ZPanel Forums)
+	 * @author VJ Patel (meetthevj@gmail.com - VJftw @Fusionpanel Forums)
 	 * @param string $dir The full path to the directory who's contents to remove
 	*/
 	static function RemoveDirectoryContents($dir) {
@@ -110,7 +110,7 @@ class fs_filehandler {
 	
 	/**
 	 * Removes a Directory and its contents
-	 * @author VJ Patel (meetthevj@gmail.com - VJftw @ZPanel Forums)
+	 * @author VJ Patel (meetthevj@gmail.com - VJftw @Fusionpanel Forums)
 	 * @param string $dir The full path to the directory to remove
 	*/
 	static function RemoveDirectory($dir) {

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * Main module interface class.
  * @package zpanelx
  * @subpackage dryden -> ui
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -119,7 +119,7 @@ class ui_module {
     static function ScanForNewModules($init = false) {
         global $zdbh;
         $new_module_list = array();
-        $rootdir = ctrl_options::GetSystemOption('sentora_root') . 'modules';
+        $rootdir = ctrl_options::GetSystemOption('fusionpanel_root') . 'modules';
         $handle = @opendir($rootdir);
         $chkdir = $rootdir . '/';
         if ($handle) {

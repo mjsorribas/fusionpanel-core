@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * Provides bcrypt (Blowfish single-way encryption) functionality for password hashing in ZPanel.
+ * Provides bcrypt (Blowfish single-way encryption) functionality for password hashing in Fusionpanel.
  * @package zpanelx
  * @subpackage dryden -> runtime
  * @version 1.0.2
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -90,7 +90,7 @@ class runtime_hash {
      * @return boolean Will return false if fails (the user didn't define a password or the version of PHP does not support Blowfish, PHP 5.3.0+ is required!) or the password hash if successful.
      */
     public function Crypt() {
-        require_once ctrl_options::GetSystemOption('sentora_root') . 'cnf/security.php';
+        require_once ctrl_options::GetSystemOption('fusionpanel_root') . 'cnf/security.php';
         global $security;
         if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
             $combined_salt = substr(sha1($this->salt . $security['server_crypto_key']), 0, 22);

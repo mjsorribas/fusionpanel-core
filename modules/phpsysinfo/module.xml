@@ -4,8 +4,8 @@
     <version>100</version>
     <defaultcat>Server Admin</defaultcat>
     <desc>phpSysInfo is a web-based server hardware monitoring tool which enables you to see detailed hardware statistics of your server.</desc>
-    <authorname>Sentora Project</authorname>
-    <authoremail>info@sentora.org</authoremail>
-    <authorurl>http://sentora.org/</authorurl>
-    <updateurl>http://store.sentora.org/version.xml</updateurl>
+    <authorname>Fusionpanel Project</authorname>
+    <authoremail>info@fusionpanel.org</authoremail>
+    <authorurl>http://fusionpanel.org/</authorurl>
+    <updateurl>http://store.fusionpanel.org/version.xml</updateurl>
 </module>

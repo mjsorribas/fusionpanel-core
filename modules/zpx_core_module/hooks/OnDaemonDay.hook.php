@@ -6,7 +6,7 @@ $modsql->execute();
 echo fs_filehandler::NewLine() . "START checking for any avaliable module updates.." . fs_filehandler::NewLine();
 while ($modules = $modsql->fetch()) {
     echo "Checking update for mod: " . $modules['mo_name_vc'] . fs_filehandler::NewLine();
-    $mod_config = new xml_reader(fs_filehandler::ReadFileContents(ctrl_options::GetSystemOption('sentora_root') . 'modules/' . $modules['mo_folder_vc'] . '/module.xml'));
+    $mod_config = new xml_reader(fs_filehandler::ReadFileContents(ctrl_options::GetSystemOption('fusionpanel_root') . 'modules/' . $modules['mo_folder_vc'] . '/module.xml'));
     $mod_config->Parse();
     if (isset($mod_config->document->version[0]->tagData)) {
         $current_version = $mod_config->document->version[0]->tagData;
@@ -43,16 +43,16 @@ echo "END getting module version update information!" . fs_filehandler::NewLine(
 
 
 /*
- * Please DO NOT remove the below code, this helps us at the Sentora project
- * find out non-personal infomation about how people are running Sentora. The only infomation
- * that we are passing back here is your Sentora version and what OS you are running it on in addition
+ * Please DO NOT remove the below code, this helps us at the Fusionpanel project
+ * find out non-personal infomation about how people are running Fusionpanel. The only infomation
+ * that we are passing back here is your Fusionpanel version and what OS you are running it on in addition
  * to collecting the email address of the default 'zadmin' account to enable automatic email
  * notficiations of new releases and urgent patches.
  */
 $zdbh->bindQuery('SELECT ac_email_vc AS email FROM x_accounts WHERE ac_user_vc = :user', array(':user' => 'zadmin'));
 $zadmin = $zdbh->returnRow();
 
-ws_generic::DoPostRequest('http://api.sentora.org/hello.json', "version=" . sys_versions::ShowSentoraVersion() . "&platform=" . sys_versions::ShowOSPlatformVersion() . "&url=" . ctrl_options::GetSystemOption('sentora_domain') . "mail=" . $zadmin['email']);
+ws_generic::DoPostRequest('http://api.fusionpanel.org/hello.json', "version=" . sys_versions::ShowFusionpanelVersion() . "&platform=" . sys_versions::ShowOSPlatformVersion() . "&url=" . ctrl_options::GetSystemOption('fusionpanel_domain') . "mail=" . $zadmin['email']);
 
 return true;
 ?>

@@ -101,7 +101,7 @@ if (isset($_GET['palette'])) {
             break;
     }
 } else {
-    $palette = 'sentora.color';
+    $palette = 'fusionpanel.color';
 }
 
 
@@ -207,7 +207,7 @@ $MyData->setSerieDescription("ScoreA", "Application A");
 /* Define the absissa serie */
 $MyData->addPoints($Labels, "Labels");
 $MyData->setAbscissa("Labels");
-$MyData->loadPalette('../palettes/sentora.color', TRUE);
+$MyData->loadPalette('../palettes/fusionpanel.color', TRUE);
 
 /* Create the pChart object */
 $myPicture = new pImage($ImageSize[0], $ImageSize[1], $MyData, TRUE);

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * System message class, used to display CSS powered messages and warnings to the user through the template layer.
  * @package zpanelx
  * @subpackage dryden -> ui
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -27,7 +27,7 @@ class ui_sysmessage {
      */
     static function shout($message,  $class = "zannounce", $title = '', $closeBtn = true) {
 
-        // Convert Sentora CSS Class to Bootstrap Class
+        // Convert Fusionpanel CSS Class to Bootstrap Class
         switch ($class) {
             case 'zannounce':
             case 'zannounceinfo':

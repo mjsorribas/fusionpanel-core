@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * @package zpanelx
  * @subpackage modules
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -22,15 +22,15 @@ class webservice extends ws_xmws {
         global $zdbh;
         $response_xml = "\n";
 
-        // Total Sentora user accounts
+        // Total Fusionpanel user accounts
         $sql = $zdbh->query("SELECT COUNT(*) AS total FROM x_accounts")->Fetch();
         $total_accounts = $sql['total'];
 
-        // Total Active Sentora user accounts
+        // Total Active Fusionpanel user accounts
         $sql = $zdbh->query("SELECT COUNT(*) AS total FROM x_accounts WHERE ac_enabled_in = 1")->Fetch();
         $total_activeaccounts = $sql['total'];
 
-        // Total Disabled Sentora user accounts
+        // Total Disabled Fusionpanel user accounts
         $sql = $zdbh->query("SELECT COUNT(*) AS total FROM x_accounts WHERE ac_enabled_in = 0")->Fetch();
         $total_disabledaccounts = $sql['total'];
 
@@ -62,9 +62,9 @@ class webservice extends ws_xmws {
 
 
         $response_xml = ws_xmws::NewXMLContentSection('stats', array(
-                    'sentorausers' => $total_accounts,
-                    'activesentorausers' => $total_activeaccounts,
-                    'disabledsentorausers' => $total_disabledaccounts,
+                    'fusionpanelusers' => $total_accounts,
+                    'activefusionpanelusers' => $total_activeaccounts,
+                    'disabledfusionpanelusers' => $total_disabledaccounts,
                     'diskspaceused' => $total_disk,
                     'bandwidthused' => $total_band,
                     'cronjobs' => $total_crons,

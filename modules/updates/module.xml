@@ -3,9 +3,9 @@
     <name>Updates</name>
     <version>100</version>
     <defaultcat>Server Admin</defaultcat>
-    <desc>Check to see if there are any available updates to your version of the Sentora software.</desc>
-    <authorname>Sentora Project</authorname>
-    <authoremail>info@sentora.org</authoremail>
-    <authorurl>http://sentora.org/</authorurl>
-    <updateurl>http://store.sentora.org/version.xml</updateurl>
+    <desc>Check to see if there are any available updates to your version of the Fusionpanel software.</desc>
+    <authorname>Fusionpanel Project</authorname>
+    <authoremail>info@fusionpanel.org</authoremail>
+    <authorurl>http://fusionpanel.org/</authorurl>
+    <updateurl>http://store.fusionpanel.org/version.xml</updateurl>
 </module>

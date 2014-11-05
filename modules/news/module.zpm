@@ -12,16 +12,16 @@
 
 
     <div class="zform_wrapper">
-        <h2><: Latest Sentora News :></h2>
+        <h2><: Latest Fusionpanel News :></h2>
         <table class="table table-striped">
-            <% if SentoraNews %>
-            <% loop SentoraNews %>
+            <% if FusionpanelNews %>
+            <% loop FusionpanelNews %>
             <tr>
                 <td><img src="modules/news/assets/newspaper.png"> <a href="<& url &>" target="_blank" title="<: Click to view this news item :>"><& title &></a></td>
             </tr>
             <% endloop %>
             <% else %>
-            Sorry, we couldn't connect to the Sentora API Server, maybe it's down at the moment!
+            Sorry, we couldn't connect to the Fusionpanel API Server, maybe it's down at the moment!
             <% endif %>
             </tr>
         </table>

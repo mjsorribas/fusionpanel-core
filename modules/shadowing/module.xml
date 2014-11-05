@@ -4,8 +4,8 @@
     <version>100</version>
     <defaultcat>Server Admin</defaultcat>
     <desc>From here you can shadow any of your client's accounts, this enables you to automatically login as the user which enables you to offer remote help by seeing what they see!</desc>
-    <authorname>Sentora Project</authorname>
-    <authoremail>info@sentora.org</authoremail>
-    <authorurl>http://sentora.org/</authorurl>
-    <updateurl>http://store.sentora.org/version.xml</updateurl>
+    <authorname>Fusionpanel Project</authorname>
+    <authoremail>info@fusionpanel.org</authoremail>
+    <authorurl>http://fusionpanel.org/</authorurl>
+    <updateurl>http://store.fusionpanel.org/version.xml</updateurl>
 </module>

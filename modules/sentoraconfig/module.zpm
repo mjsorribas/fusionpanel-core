@@ -13,8 +13,8 @@
     <@ Result @>
 
     <div class="zgrid_wrapper">
-        <h2><: Configure your Sentora Settings :></h2>
-        <form action="./?module=sentoraconfig&action=UpdateConfig" method="post">
+        <h2><: Configure your Fusionpanel Settings :></h2>
+        <form action="./?module=fusionpanelconfig&action=UpdateConfig" method="post">
             <table class="table table-striped">
                 <% loop Config %>
                 <tr valign="top">
@@ -32,8 +32,8 @@
     </div>
 
     <div class="zgrid_wrapper">
-        <h2><: Sentora Daemon :></h2>
-        <form action="./?module=sentoraconfig&action=ForceDaemon" method="post">
+        <h2><: Fusionpanel Daemon :></h2>
+        <form action="./?module=fusionpanelconfig&action=ForceDaemon" method="post">
             <table class="table table-striped">
                 <tr valign="top">
                     <th nowrap="nowrap" width="300px"><: Next Daemon Run :>:</th><td><@ NextRunTime @></td>

@@ -1,14 +1,14 @@
 <?php
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 fusionpanel Project (http://www.fusionpanel.org/) 
+ * fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * AJAX Handler to save Module Category block positions on dashboard page
  * @package zpanelx
  * @subpackage dryden -> ajax
  * @version 1.1.0
  * @author Jason Davis (jason.davis.fl@gmail.com)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */

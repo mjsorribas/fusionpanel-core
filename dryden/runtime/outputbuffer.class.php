@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
  *
  * Output buffering support class.
- * @package sentora
+ * @package fusionpanel
  * @subpackage dryden -> runtime
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * @link http://www.sentora.org
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * @link http://www.fusionpanel.org
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
 class runtime_outputbuffer

@@ -1,29 +1,29 @@
-# Sentora Default Theme #
-/* Sentora is a GPL fork of the ZPanel Project */:
+# Fusionpanel Default Theme #
+/* Fusionpanel is a GPL fork of the Fusionpanel Project */:
 
-This document outlines some of the JavaScript and CSS functionality that is built into the Sentora theme.  You can use any of this in your own modules and themes that you build, as long as all the proper files are loaded.
+This document outlines some of the JavaScript and CSS functionality that is built into the Fusionpanel theme.  You can use any of this in your own modules and themes that you build, as long as all the proper files are loaded.
 
-If you have any questions about this theme, please ask on the [Sentora Forums](http://forums.sentora.org/) or contact [Jason Davis](http://www.codedevelopr.com).
+If you have any questions about this theme, please ask on the [Fusionpanel Forums](http://forums.fusionpanel.org/) or contact [Jason Davis](http://www.codedevelopr.com).
 
 ## Override Module Icons ##
-You can replace the module icons that come with a module on the Sentora dashboard screen with your own icons.
+You can replace the module icons that come with a module on the Fusionpanel dashboard screen with your own icons.
 
 To override a module's icon, simply create a folder and image file in this location...
 
-    /etc/styles/Sentora_Default/images/MODULE-NAME/assets/icon.png
+    /etc/styles/Fusionpanel_Default/images/MODULE-NAME/assets/icon.png
 
 Replacing **MODULE-NAME** with the name of the module you are replacing.  The module name has to be the exact same name that the module uses in the module's folder for this override to work!
 
 An example to over-ride the MySQL Database module's icon...
 
-    /etc/styles/Sentora_Default/images/mysql_databases/assets/icon.png
+    /etc/styles/Fusionpanel_Default/images/mysql_databases/assets/icon.png
 
 ## Console Logging ##
 You can log to the Browsers JavaScript Console for debugging using this function below.
 
-    sentora.utils.log('my debug data');
+    fusionpanel.utils.log('my debug data');
 
-As long as this Property `sentora.utils.settings.debug = false;` is set to `TRUE` then the all data will print to console.  
+As long as this Property `fusionpanel.utils.settings.debug = false;` is set to `TRUE` then the all data will print to console.  
 
 Setting to false will turn it off allowing you to keep all your debugging code in place.
 
@@ -32,12 +32,12 @@ Setting to false will turn it off allowing you to keep all your debugging code i
 
 You can Programmatically show the loading screen and spinner with...
 
-    sentora.loader.showLoader()
+    fusionpanel.loader.showLoader()
 
 and hide/kill it with...
 
 
-    sentora.loader.hideLoader()
+    fusionpanel.loader.hideLoader()
 
 To have the Loader screen show automatically when a `Button` is clicked.  You can do a Button HTML like this...
 
@@ -57,7 +57,7 @@ You can set if the Notice will have a Close X Button or not, the Notice CSS Clas
 
 **Notice Example Usage:**
 
-    sentora.notice.show({
+    fusionpanel.notice.show({
         type: "success",
         selector: "#alert-area",
         closeButton: true,
@@ -86,7 +86,7 @@ Lastly the most flexible part is you can even set your own custom callback funct
 
 **Dialog Example Usage:**
 
-    sentora.dialog.confirm({
+    fusionpanel.dialog.confirm({
         title: 'WARNING',
         message: 'Warning message content here',
         width: 300,
@@ -183,7 +183,7 @@ The examples below show Button HTML
     </p>
 
 ### Panels ###
-Panels are one of my favorite new things in Bootstrap 3 and they are used a lot in Sentora!
+Panels are one of my favorite new things in Bootstrap 3 and they are used a lot in Fusionpanel!
 
 You can use them as well....
 

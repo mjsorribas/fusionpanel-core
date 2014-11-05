@@ -1,14 +1,14 @@
 /*
- * Sentora.js
+ * Fusionpanel.js
  *
- * @package ZPanel
+ * @package Fusionpanel
  * @version 1.0.0
  * @author Jason Davis - <jason.davis.fl@gmail.com>
- * @copyright (c) 2013 ZPanel Group - http://www.zpanelcp.com/
+ * @copyright (c) 2013 Fusionpanel Group - http://www.zpanelcp.com/
  * @license http://opensource.org/licenses/gpl-3.0.html GNU Public License v3
  */
 
-// The Main Sentora.js file requires these libraries to assist it and make it all work...
+// The Main Fusionpanel.js file requires these libraries to assist it and make it all work...
 // /js/jquery.js
 // /js/jquery.cookie.js
 // /js/jquery.sortable-custom.js
@@ -21,17 +21,17 @@
 // /js/bootstrap-popover.js
 // /js/typeahead.js
 
-var Sentora = {
+var Fusionpanel = {
 
     init: function() {
 
-        Sentora.utils.log('Sentora.init() ran');
-        Sentora.menu.header();
-        Sentora.menu.sidebar();
-        Sentora.loader.init();
-        Sentora.stats.init();
-        Sentora.modules.dragDrop();
-        Sentora.modules.boxes();
+        Fusionpanel.utils.log('Fusionpanel.init() ran');
+        Fusionpanel.menu.header();
+        Fusionpanel.menu.sidebar();
+        Fusionpanel.loader.init();
+        Fusionpanel.stats.init();
+        Fusionpanel.modules.dragDrop();
+        Fusionpanel.modules.boxes();
 
         // Enable Bootstrap Pop-overs
         $('body').popover({
@@ -50,7 +50,7 @@ var Sentora = {
         });
 
 
-        //SentoraDNS.utils.cache.dnsTitleId = $("#dnsTitle");
+        //FusionpanelDNS.utils.cache.dnsTitleId = $("#dnsTitle");
 
     },
 
@@ -62,7 +62,7 @@ var Sentora = {
         cache: {},
 
         log: function(what) {
-            if (Sentora.utils.settings.debug) {
+            if (Fusionpanel.utils.settings.debug) {
                 console.log(what);
             }
         },
@@ -72,13 +72,13 @@ var Sentora = {
             var property;
             for (property in source) {
                 if (source[property] && source[property].constructor && source[property].constructor === Object) {
-                    //Sentora.utils.log(source[property].constructor);
+                    //Fusionpanel.utils.log(source[property].constructor);
                     destination[property] = destination[property] || {};
-                    Sentora.utils.deepExtend(destination[property], source[property]);
+                    Fusionpanel.utils.deepExtend(destination[property], source[property]);
                 } else if (property in destination) {
                     destination[property] = source[property];
                 } else {
-                    throw new Error('Sentora.deepExtend was passed a non-supported Property: ' + property);
+                    throw new Error('Fusionpanel.deepExtend was passed a non-supported Property: ' + property);
                 }
             }
             return destination;
@@ -100,39 +100,39 @@ var Sentora = {
         spinner: null,
 
         init: function() {
-            Sentora.utils.log('Sentora.loader.init() ran - Watching for Click events');
+            Fusionpanel.utils.log('Fusionpanel.loader.init() ran - Watching for Click events');
             //Bind zloader to button click
             $('#button').click(function() {
-                Sentora.loader.showLoader();
+                Fusionpanel.loader.showLoader();
             });
             // $('.fg-button').click(function() {
-            //     Sentora.loader.showLoader();
+            //     Fusionpanel.loader.showLoader();
             // });
             $('.button-loader').click(function() {
-                Sentora.loader.showLoader();
+                Fusionpanel.loader.showLoader();
             });
             //Bind zloader to save button click
             // $('.save').click(function() {
-            //     Sentora.loader.showLoader();
+            //     Fusionpanel.loader.showLoader();
             // });
 
         },
 
         showLoader: function() {
             //Show Spinning Loader
-            Sentora.utils.log('Sentora.loader.showLoader() ran - Show Spinning Loader screen');
+            Fusionpanel.utils.log('Fusionpanel.loader.showLoader() ran - Show Spinning Loader screen');
             $('#zloader_overlay').fadeIn('fast', function() {
                 $("#zloader").show();
-                Sentora.loader.buildSpinner();
+                Fusionpanel.loader.buildSpinner();
             });
         },
 
         hideLoader: function() {
             //Hide  Spinning Loader
-            Sentora.utils.log('Sentora.loader.hideLoader() ran - Remove Spinning Loader screen');
+            Fusionpanel.utils.log('Fusionpanel.loader.hideLoader() ran - Remove Spinning Loader screen');
             $('#zloader_overlay').fadeOut('fast', function() {
                 $("#zloader").hide();
-                Sentora.loader.spinner.stop();
+                Fusionpanel.loader.spinner.stop();
             });
         },
 
@@ -140,7 +140,7 @@ var Sentora = {
         // REQUIRES spin.min.js to be loaded FIRST
         // http://fgnass.github.io/spin.js/
         buildSpinner: function() {
-            Sentora.utils.log('Sentora.loader.buildSpinner() ran - Builing Spining Loader');
+            Fusionpanel.utils.log('Fusionpanel.loader.buildSpinner() ran - Builing Spining Loader');
             var opts = {
                 lines: 9, // The number of lines to draw
                 length: 11, // The length of each line
@@ -160,7 +160,7 @@ var Sentora = {
             };
 
             var target = document.getElementById('zloader_content');
-            Sentora.loader.spinner = new Spinner(opts).spin(target);
+            Fusionpanel.loader.spinner = new Spinner(opts).spin(target);
         },
     },
 
@@ -169,7 +169,7 @@ var Sentora = {
 
         // Show a Custom Bootstrap Notice
         // Example Usage
-        // Sentora.notice.show({
+        // Fusionpanel.notice.show({
         //     type: "success",
         //     selector: "#alert-area",
         //     closeTime: 6000,
@@ -181,7 +181,7 @@ var Sentora = {
         show: function(options) {
             var i;
 
-            Sentora.utils.log('Sentora.notice.show() ran - Show Notice');
+            Fusionpanel.utils.log('Fusionpanel.notice.show() ran - Show Notice');
             // Default options
             this.options = {
                 selector: "#alert-area", // Selector: Specify the Div ID to Append Notice to
@@ -210,13 +210,13 @@ var Sentora = {
             // If Autoclose is enabled then Close/remove the Notice Div after X seconds
             if (this.options.autoClose) {
                 setTimeout(function() {
-                    Sentora.notice.hide(selector);
+                    Fusionpanel.notice.hide(selector);
                 }, this.options.closeTime);
             }
         },
 
         hide: function(selector) {
-            Sentora.utils.log('Sentora.notice.hide() ran - Hide Notice');
+            Fusionpanel.utils.log('Fusionpanel.notice.hide() ran - Hide Notice');
             selector.children(".alert:first").fadeOut('slow', function() {
                 $(this).remove();
 
@@ -239,7 +239,7 @@ var Sentora = {
                 dialogDiv,
                 backdropDiv;
 
-            Sentora.utils.log('Sentora.dialog.confirm() ran - Show Dialog');
+            Fusionpanel.utils.log('Fusionpanel.dialog.confirm() ran - Show Dialog');
             // Default options
             this.options = {
                 title: 'ATTENTION',
@@ -260,7 +260,7 @@ var Sentora = {
             };
 
             // Merge User defined options
-            Sentora.utils.deepExtend(this.options, options);
+            Fusionpanel.utils.deepExtend(this.options, options);
 
             // Check for Hidden Buttons
             okButtonStyle = this.options.okButton.show === false ? 'style="display: none;"' : 
@@ -294,7 +294,7 @@ var Sentora = {
             //OK button click event
             if (this.options.okButton.show !== false) {
                 var ok = dialogDiv.getElementsByTagName('button')[0];
-                Sentora.utils.addEvent(ok, 'click', function() {
+                Fusionpanel.utils.addEvent(ok, 'click', function() {
                     //ok.addEventListener('click', function() {
                     document.body.removeChild(dialogDiv);
                     document.body.removeChild(backdropDiv);
@@ -306,7 +306,7 @@ var Sentora = {
             //Cancel button click event
             if (this.options.cancelButton.show !== false) {
                 var cancel = dialogDiv.getElementsByTagName('button')[1];
-                Sentora.utils.addEvent(cancel, 'click', function() {
+                Fusionpanel.utils.addEvent(cancel, 'click', function() {
                     //cancel.addEventListener('click', function() {
                     document.body.removeChild(dialogDiv);
                     document.body.removeChild(backdropDiv);
@@ -325,7 +325,7 @@ var Sentora = {
             //Account Stats Tabs
             // Requires Bootstrap tabs
             $('#stats-tab a').click(function(e) {
-                Sentora.utils.log('Sentora.stats.init Click Event - Toggle Stats Tabs');
+                Fusionpanel.utils.log('Fusionpanel.stats.init Click Event - Toggle Stats Tabs');
                 e.preventDefault();
                 $(this).tab('show');
             })
@@ -342,7 +342,7 @@ var Sentora = {
 
         sidebar: function() {
 
-            Sentora.utils.log('Sentora.menu.sidebar() Ran - Handle sidebar menu clicks');
+            Fusionpanel.utils.log('Fusionpanel.menu.sidebar() Ran - Handle sidebar menu clicks');
             // // Handle the Sidebar Menu state based on Click events
             $('#menu-sidebar li:has(ul) .heading').click(function() {
                 $(this).next().toggle();
@@ -376,28 +376,28 @@ var Sentora = {
 
         // Requires Draggable/Sortable JS Library
         dragDrop: function() {
-            Sentora.utils.log('Sentora.modules.dragDrop() Ran - Handle Module Box Sorting');
+            Fusionpanel.utils.log('Fusionpanel.modules.dragDrop() Ran - Handle Module Box Sorting');
             $('.sortable').sortable({
                 handle: '.handle',
                 onStartDrag: function() {
-                    Sentora.modules.addFloats($(".sortable"));
+                    Fusionpanel.modules.addFloats($(".sortable"));
                 },
                 onEndDrag: function() {
-                    Sentora.modules.addFloats($(".sortable"))
+                    Fusionpanel.modules.addFloats($(".sortable"))
                 },
                 onChangeOrder: function() {
-                    Sentora.modules.addFloats($(".sortable"))
+                    Fusionpanel.modules.addFloats($(".sortable"))
                 }
             }).bind('sortupdate', function() {
 
                 var sortorder = new Array();
-                Sentora.modules.addFloats($(".sortable"));
+                Fusionpanel.modules.addFloats($(".sortable"));
 
                 $('.sortable li.module-box').each(function() {
                     sortorder.push($(this).attr('data-catid'));
                 });
 
-                Sentora.loader.showLoader();
+                Fusionpanel.loader.showLoader();
 
                 $.ajax({
                     type: "POST",
@@ -410,24 +410,24 @@ var Sentora = {
                     },
 
                     success: function(data) {
-                        Sentora.utils.log('Sentora.modules.dragDrop() AJAX Sorting order Saved');
-                        Sentora.loader.hideLoader();
+                        Fusionpanel.utils.log('Fusionpanel.modules.dragDrop() AJAX Sorting order Saved');
+                        Fusionpanel.loader.hideLoader();
                     },
 
                     error: function(ts) {
-                        Sentora.utils.log('ERROR: Sentora.modules.dragDrop() AJAX Sorting order NOT Saved');
-                        Sentora.loader.hideLoader();
+                        Fusionpanel.utils.log('ERROR: Fusionpanel.modules.dragDrop() AJAX Sorting order NOT Saved');
+                        Fusionpanel.loader.hideLoader();
                     }
 
                 });
             });
 
-            Sentora.modules.addFloats($(".sortable"));
+            Fusionpanel.modules.addFloats($(".sortable"));
 
         },
 
         addFloats: function(container) {
-            Sentora.utils.log('Sentora.modules.addFloats() - Floats added for Drag/Drop Modules');
+            Fusionpanel.utils.log('Fusionpanel.modules.addFloats() - Floats added for Drag/Drop Modules');
             $(container).find(".module-box:not(.sortable-dragging)").removeClass("sortable-first-col").each(function(index, element) {
                 if (index % 2 == 0) {
                     $(this).addClass("sortable-first-col");
@@ -445,7 +445,7 @@ var Sentora = {
 
             // Module-box Expand/Collapse click event
             $('.module-box-title .tools .expand, .module-box-title .tools .collapse').click(function(e) {
-                Sentora.utils.log('modulebox clicked');
+                Fusionpanel.utils.log('modulebox clicked');
                 var el = $(this).parents(".module-box").children(".module-box-body");
                 var cookieName = $(this).parents(".module-box-title").children("h4").text() + 'Module';
 
@@ -493,7 +493,7 @@ var Sentora = {
         //     $('#module-search').typeahead({
         //         source: moduleNames,
         //         updater: function(item) {
-        //             Sentora.loader.showLoader();
+        //             Fusionpanel.loader.showLoader();
         //             setTimeout(function() {
         //                 window.location.href = '/?module=' + moduleUrls[item];
         //                 return item;
@@ -522,7 +522,7 @@ var Sentora = {
                 header: '<h3 class="module-search">Modules</h3>'
             }).on('typeahead:selected typeahead:autocompleted', function($e,datum) {
                 var $typeahead = $(this);
-                Sentora.utils.log(moduleUrls[datum.value]);
+                Fusionpanel.utils.log(moduleUrls[datum.value]);
                     window.location.href = '/?module=' + moduleUrls[datum.value];
             });
         }
@@ -533,6 +533,6 @@ var Sentora = {
 };
 
 $(function() {
-    Sentora.utils.settings.debug = false;
-    Sentora.init();
+    Fusionpanel.utils.settings.debug = false;
+    Fusionpanel.init();
 });

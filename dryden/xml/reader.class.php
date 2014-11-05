@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 fusionpanel Project (http://www.fusionpanel.org/) 
+ * fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU LesserGeneral Public License as published

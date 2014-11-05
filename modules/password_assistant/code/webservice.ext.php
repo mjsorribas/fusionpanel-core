@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * @package zpanelx
  * @subpackage modules
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
 class webservice extends ws_xmws {
 
     /**
-     * Resets a user's Sentora account password. Requires <uid> and <newpassword> tags.
+     * Resets a user's Fusionpanel account password. Requires <uid> and <newpassword> tags.
      * @return type 
      */
     function ResetUserPassword() {

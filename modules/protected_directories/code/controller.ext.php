@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
  * 
  * This class handles all core module functionality.
  * @author Kevin Andrews <kevin@zvps.uk>
@@ -45,12 +45,12 @@ class module_controller extends ctrl_module
     {
         global $zdbh;
         $sqlString = "SELECT * FROM x_htpasswd_file
-            WHERE x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            WHERE x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
             AND x_htpasswd_file_id = :x_htpasswd_file_id
             AND x_htpasswd_file_deleted IS NULL";
         $bindArray = array( 
             ':x_htpasswd_file_id' => $x_htpasswd_file_id, 
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
             );
         try {
             $zdbh->bindQuery( $sqlString, $bindArray );
@@ -67,16 +67,16 @@ class module_controller extends ctrl_module
     /**
      * 
      * @global db_driver $zdbh
-     * @param int $x_htpasswd_sentora_user_id
+     * @param int $x_htpasswd_fusionpanel_user_id
      * @return array
      */
     static function fetchFileList()
     {
         global $zdbh;
         $sqlString = "SELECT * FROM x_htpasswd_file
-            WHERE x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            WHERE x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
             AND x_htpasswd_file_deleted IS NULL";
-        $bindArray = array( ':x_htpasswd_sentora_user_id' => self::getCurrentUserId() );
+        $bindArray = array( ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId() );
         $zdbh->bindQuery( $sqlString, $bindArray );
         $rows = $zdbh->returnRows();
         /** format created */
@@ -97,11 +97,11 @@ class module_controller extends ctrl_module
         global $zdbh;
         $sqlString = "SELECT * FROM x_htpasswd_user
             WHERE x_htpasswd_user_id = :x_htpasswd_user_id
-            AND x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            AND x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
             AND x_htpasswd_user_deleted IS NULL";
         $bindArray = array( 
             ':x_htpasswd_user_id' => self::getUserId(),
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId()
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId()
             );
         $zdbh->bindQuery( $sqlString, $bindArray );
         
@@ -116,17 +116,17 @@ class module_controller extends ctrl_module
     static function fetchUserList()
     {
         global $zdbh;
-        $sqlString = "SELECT * FROM sentora_core.x_htpasswd_file 
+        $sqlString = "SELECT * FROM fusionpanel_core.x_htpasswd_file 
                      LEFT OUTER JOIN x_htpasswd_mapper
                      ON x_htpasswd_file.x_htpasswd_file_id = x_htpasswd_mapper.x_htpasswd_file_id
                      LEFT OUTER JOIN x_htpasswd_user
                      ON x_htpasswd_user.x_htpasswd_user_id = x_htpasswd_mapper.x_htpasswd_user_id
                      WHERE x_htpasswd_file.x_htpasswd_file_id = :x_htpasswd_file_id
-                     AND (x_htpasswd_user.x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
-                          OR x_htpasswd_user.x_htpasswd_sentora_user_id IS NULL);";
+                     AND (x_htpasswd_user.x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
+                          OR x_htpasswd_user.x_htpasswd_fusionpanel_user_id IS NULL);";
         $bindArray = array( 
             ':x_htpasswd_file_id' => self::getId(), 
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),     
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),     
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         $rows = $zdbh->returnRows();
@@ -151,11 +151,11 @@ class module_controller extends ctrl_module
             INNER JOIN x_htpasswd_mapper m ON f.x_htpasswd_file_id=m.x_htpasswd_file_id
             INNER JOIN x_htpasswd_user u ON m.x_htpasswd_user_id=u.x_htpasswd_user_id
             WHERE f.x_htpasswd_file_id = :x_htpasswd_file_id
-            AND f.x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            AND f.x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
         ";
         $bindArray = array(
             ':x_htpasswd_file_id' => self::getId(),
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         $zdbh->bindQuery($sqlString, $bindArray);
         $rows = $zdbh->returnRows();
@@ -183,21 +183,21 @@ class module_controller extends ctrl_module
                 x_htpasswd_file_target, 
                 x_htpasswd_file_message, 
                 x_htpasswd_file_created, 
-                x_htpasswd_sentora_user_id
+                x_htpasswd_fusionpanel_user_id
             )
             VALUES
             (
                 :x_htpasswd_file_target, 
                 :x_htpasswd_file_message, 
                 :x_htpasswd_file_created, 
-                :x_htpasswd_sentora_user_id
+                :x_htpasswd_fusionpanel_user_id
             )
         ";
         $bindArray = array(
             ':x_htpasswd_file_target'    => $fileArray[ 'x_htpasswd_file_target' ],
             ':x_htpasswd_file_message'   => $fileArray[ 'x_htpasswd_file_message' ],
             ':x_htpasswd_file_created'   => $fileArray[ 'x_htpasswd_file_created' ],
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         try {
             $zdbh->bindQuery( $sqlString, $bindArray );
@@ -226,21 +226,21 @@ class module_controller extends ctrl_module
                 x_htpasswd_user_username,
                 x_htpasswd_user_password,
                 x_htpasswd_user_created,
-                x_htpasswd_sentora_user_id
+                x_htpasswd_fusionpanel_user_id
             )
             VALUES
             (
                 :x_htpasswd_user_username,
                 :x_htpasswd_user_password,
                 :x_htpasswd_user_created,
-                :x_htpasswd_sentora_user_id
+                :x_htpasswd_fusionpanel_user_id
             )
         ";
         $bindArray = array(
             ':x_htpasswd_user_username' => $userArray[ 'x_htpasswd_user_username' ],
             ':x_htpasswd_user_password' => $userArray[ 'x_htpasswd_user_password' ],
             ':x_htpasswd_user_created'  => time(),
-            ':x_htpasswd_sentora_user_id'  => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id'  => self::getCurrentUserId(),
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         return $zdbh->lastInsertId();
@@ -294,13 +294,13 @@ class module_controller extends ctrl_module
             x_htpasswd_file_target = :x_htpasswd_file_target,
             x_htpasswd_file_message = :x_htpasswd_file_message
             WHERE x_htpasswd_file_id = :x_htpasswd_file_id
-            AND x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            AND x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
         ";
         $bindArray = array(
             ':x_htpasswd_file_id'      => $fileArray[ 'x_htpasswd_file_id' ],
             ':x_htpasswd_file_target'  => $fileArray[ 'x_htpasswd_file_target' ],
             ':x_htpasswd_file_message' => $fileArray[ 'x_htpasswd_file_message' ],
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         return $zdbh->returnResult();
@@ -315,13 +315,13 @@ class module_controller extends ctrl_module
             x_htpasswd_user_password = :x_htpasswd_user_password
             WHERE
             x_htpasswd_user_id = :x_htpasswd_user_id
-            x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
         ";
         $bindArray = array(
             ':x_htpasswd_user_id'       => self::getUserId(),
             ':x_htpasswd_user_username' => $userArray[ 'x_htpasswd_user_username' ],
             ':x_htpasswd_user_password' => $userArray[ 'x_htpasswd_user_password' ],
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         return $zdbh->returnResult();
@@ -341,11 +341,11 @@ class module_controller extends ctrl_module
         $sqlString = "
             DELETE FROM x_htpasswd_file 
             WHERE x_htpasswd_file_id = :x_htpasswd_file_id
-            AND x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            AND x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
         ";
         $bindArray = array( 
             ':x_htpasswd_file_id' => $x_htpasswd_file_id,
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         return $zdbh->returnResult();
@@ -363,11 +363,11 @@ class module_controller extends ctrl_module
         $sqlString = "
             DELETE FROM x_htpasswd_user 
             WHERE x_htpasswd_user_id = :x_htpasswd_user_id
-            AND x_htpasswd_sentora_user_id = :x_htpasswd_sentora_user_id
+            AND x_htpasswd_fusionpanel_user_id = :x_htpasswd_fusionpanel_user_id
         ";
         $bindArray = array( 
             ':x_htpasswd_user_id' => $x_htpasswd_user_id,
-            ':x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+            ':x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
         );
         $zdbh->bindQuery( $sqlString, $bindArray );
         return $zdbh->returnResult();
@@ -723,7 +723,7 @@ class module_controller extends ctrl_module
                     'x_htpasswd_file_target'    => $fileTarget,
                     'x_htpasswd_file_message'   => $message,
                     'x_htpasswd_file_created'   => time(),
-                    'x_htpasswd_sentora_user_id' => self::getCurrentUserId(),
+                    'x_htpasswd_fusionpanel_user_id' => self::getCurrentUserId(),
                 )
             );
             if(!self::hasFlashErrors()) 

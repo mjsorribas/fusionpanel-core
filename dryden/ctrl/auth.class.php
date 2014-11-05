@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * Authentication class handles ZPanel authentication and handles user sessions.
+ * Authentication class handles Fusionpanel authentication and handles user sessions.
  * @package zpanelx
  * @subpackage dryden -> controller
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -54,7 +54,7 @@ class ctrl_auth
     /**
      * Sets a user session ID.
      * @author Bobby Allen (ballen@bobbyallen.me)
-     * @param int $zpuid The Sentora user account ID to set the session as.
+     * @param int $zpuid The Fusionpanel user account ID to set the session as.
      * @return bool
      */
     static function SetUserSession($zpuid = 0, $sessionSecuirty = true)
@@ -148,7 +148,7 @@ class ctrl_auth
     }
 
     /**
-     * Destroys a session and ends a user's Sentora session.
+     * Destroys a session and ends a user's Fusionpanel session.
      * @author Bobby Allen (ballen@bobbyallen.me)
      * @return bool
      */
@@ -181,7 +181,7 @@ class ctrl_auth
     /**
      * Returns the UID (User ID) of the current logged in user.
      * @author Bobby Allen (ballen@bobbyallen.me)
-     * @global obj $controller The Sentora controller object.
+     * @global obj $controller The Fusionpanel controller object.
      * @return int The current user's session ID.
      */
     static function CurrentUserID()

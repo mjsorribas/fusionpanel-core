@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * This reports on core zpanel software versions.
  * @package zpanelx
  * @subpackage dryden -> sys
  * @version 1.0.0
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */
@@ -132,11 +132,11 @@ class sys_versions {
     }
 
     /**
-     * Returns the Sentora version (based on the DB version number.)
+     * Returns the Fusionpanel version (based on the DB version number.)
      * @author Bobby Allen (ballen@bobbyallen.me)
-     * @return string Sentora DB Version
+     * @return string Fusionpanel DB Version
      */
-    static function ShowSentoraVersion() {
+    static function ShowFusionpanelVersion() {
         return ctrl_options::GetSystemOption('dbversion');
     }
 }

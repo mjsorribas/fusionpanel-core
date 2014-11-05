@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
- * ZPanel - A Cross-Platform Open-Source Web Hosting Control panel.
+ * Fusionpanel - A Cross-Platform Open-Source Web Hosting Control panel.
  *
- * @package ZPanel
+ * @package Fusionpanel
  * @version $Id$
  * @author Bobby Allen - ballen@bobbyallen.me
- * @copyright (c) 2008-2014 ZPanel Group - http://www.zpanelcp.com/
+ * @copyright (c) 2008-2014 Fusionpanel Group - http://www.zpanelcp.com/
  * @license http://opensource.org/licenses/gpl-3.0.html GNU Public License v3
  *
- * This program (ZPanel) is free software: you can redistribute it and/or modify
+ * This program (Fusionpanel) is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -29,12 +29,12 @@
 class module_controller extends ctrl_module
 {
 
-    public static function getSentoraUpdates()
+    public static function getFusionpanelUpdates()
     {
         if (ctrl_options::GetSystemOption('dbversion') < ctrl_options::GetSystemOption('latestzpversion')) {
-            $msg = ui_language::translate("There are currently new updates for your Sentora installation, please download the latest release") . " (<strong>" . ctrl_options::GetSystemOption('latestzpversion') . "</strong>) from <a href=\"http://www.sentora.org/\">http://www.sentora.org/</a>.";
+            $msg = ui_language::translate("There are currently new updates for your Fusionpanel installation, please download the latest release") . " (<strong>" . ctrl_options::GetSystemOption('latestzpversion') . "</strong>) from <a href=\"http://www.fusionpanel.org/\">http://www.fusionpanel.org/</a>.";
         } elseif (ctrl_options::GetSystemOption('dbversion') == ctrl_options::GetSystemOption('latestzpversion')) {
-            $msg = "Congratulations, You are running the most recent version of Sentora (<strong>" . ctrl_options::GetSystemOption('latestzpversion') . "</strong>)!";
+            $msg = "Congratulations, You are running the most recent version of Fusionpanel (<strong>" . ctrl_options::GetSystemOption('latestzpversion') . "</strong>)!";
         } else {
             $msg = "You appear to be running a BETA release, unless you are testing or developing we recommend you download and use the latest stable release (<strong>" . ctrl_options::GetSystemOption('latestzpversion') . "</strong>).";
         }

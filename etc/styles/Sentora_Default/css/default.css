@@ -1,4 +1,4 @@
-/* Default (Dark) Color Theme CSS for Sentora */
+/* Default (Dark) Color Theme CSS for Fusionpanel */
 
 *, *:focus {
     outline: 0 none;
@@ -802,7 +802,7 @@ li.highlight {
 .icon-phpsysinfo:before
 .icon-shadowing:before
 .icon-updates:before
-.icon-sentoraconfig:before
+.icon-fusionpanelconfig:before
 .icon-news:before
 
 .icon-backupmgr:before
@@ -887,7 +887,7 @@ li.highlight {
 .icon-services:before,
 .icon-signal-1:before { content: '\e770'; }
 
-.icon-sentoraconfig:before,
+.icon-fusionpanelconfig:before,
 .icon-cog-1:before { content: '\e801'; }
 
 .icon-news:before,

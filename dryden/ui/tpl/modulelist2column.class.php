@@ -1,7 +1,7 @@
 <?php
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * Home Dashboard with draggable & collapsible category sections.
  * @package zpanelx
@@ -9,7 +9,7 @@
  * @version 1.1.0
  * @author Bobby Allen (ballen@bobbyallen.me)
  * @author Jason Davis (jason.davis.fl@gmail.com)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  */

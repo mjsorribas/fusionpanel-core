@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright 2014 Sentora Project (http://www.sentora.org/) 
- * Sentora is a GPL fork of the ZPanel Project whose original header follows:
+ * @copyright 2014 Fusionpanel Project (http://www.fusionpanel.org/) 
+ * Fusionpanel is a GPL fork of the Fusionpanel Project whose original header follows:
  *
  * The daemon initiator file.
  * @package zpanelx
  * @subpackage core -> daemon
  * @author Bobby Allen (ballen@bobbyallen.me)
- * @copyright ZPanel Project (http://www.zpanelcp.com/)
+ * @copyright Fusionpanel Project (http://www.zpanelcp.com/)
  * @link http://www.zpanelcp.com/
  * @license GPL (http://www.gnu.org/licenses/gpl.html)
  *
@@ -30,7 +30,7 @@ $daemonLog = new debug_logger();
 $daemonLog->method = "file";
 $daemonLog->logcode = "001";
 
-$dateformat = ctrl_options::GetSystemOption('Sentora_df');
+$dateformat = ctrl_options::GetSystemOption('Fusionpanel_df');
 
 if (!runtime_controller::IsCLI())
     echo "<pre>";
