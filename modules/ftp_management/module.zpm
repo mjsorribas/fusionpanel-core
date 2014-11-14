@@ -62,6 +62,32 @@
     <div class="zgrid_wrapper">
         <h2><: Current FTP accounts :></h2>
         <% if ClientList %>
+        <script type="text/javascript">
+          var ShowPass = false;
+          function ShowHide()
+          {
+              ShowPass = !ShowPass;
+              if (ShowPass)
+              { 
+                  document.getElementById('ColPass').style.visibility = 'visible';
+                  document.getElementById('btn_sh').innerHTML = 'Hide passwords';
+                  document.getElementById('ColPassfalse').style.visibility = 'collapse';
+                  document.getElementById('ColPassfalse').style.display = 'none';
+                  document.getElementById('ColPass').style.display = 'block';
+
+              }
+              else
+              {
+                  document.getElementById('ColPass').style.visibility = 'collapse';
+                  document.getElementById('btn_sh').innerHTML = 'Show passwords';
+                  document.getElementById('ColPassfalse').style.visibility = 'visible';
+                  document.getElementById('ColPassfalse').style.display = 'block';
+                  document.getElementById('ColPass').style.display = 'none';
+
+              }
+              return false;
+          }
+        </script>
         <form action="./?module=ftp_management&action=EditFTP" method="post">
             <table class="table table-striped">
                 <tr>
@@ -69,14 +95,18 @@
                     <th><: Home directory :></th>
                     <th><: Permission :></th>
                     <th><: Password :></th>
-                    <th></th>
+                    <!--<th></th>-->
+                    <th><button class="button btn btn-default" id="btn_sh" onClick="return ShowHide()">Show Passwords</button></th>
+                    
                 </tr>
                 <% loop ClientList %>
                 <tr>
                     <td><& username &></td>
                     <td><& directory &></td>
                     <td><& access &></td>
-                    <td><& password &></td>
+                    <td><span  id="ColPass" style="visibility:collapse;display:none;"><& password &></span><span id="ColPassfalse" style="visibility:visible;display:block;">***************</span></td>
+                    
+
                     <td>
                         <button class="button-loader btn btn-default" type="submit" name="inReset_<& id &>" id="button" value="inReset_<& id &>"><: Reset Password :></button>
                         <button class="button-loader delete btn btn-danger" type="submit" name="inDelete_<& id &>" id="button" value="inDelete_<& id &>"><: Delete :></button>
